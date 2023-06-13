@@ -30,7 +30,7 @@ TypeScriptではJavaScriptの文法が全部使える<br>
 両方ともMicrosoftが開発している為相性が良い<br>
 元々自動的に内臓されており設定、プラグも入れなくても使える<br>
 
-###### tsxコマンドとは何か？
+###### tscコマンドとは何か？
 
 TypeScriptコンパイラーとゆう<br>
 TypeScriptからJavaScriptにコンパイルされる
