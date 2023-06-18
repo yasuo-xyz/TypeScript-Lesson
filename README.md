@@ -61,3 +61,12 @@ TypeScriptは肩付きLinterとゆう他のLinterとは違う良さがある（J
 コンパイルする時にダウングレード出来る（トランススパイラル）<br>
 バベルとゆうツールを使ってもダウングレード出来る<br>
 <!-- https://kangax.github.io/compat-table/es6/ -->
+
+## TypeScriptの型とJavaScriptの型
+
+TypeScriptはJavaScriptにコンパイルする時にTypeScriptコンパイラー（tscコマンド）で型検査を行なっている<br>
+なのでTypeScriptは型検査に通るように書く必要がある<br>
+JavaScriptエンジンとゆうのによってJavaScriptは型検査が行われて機械に分かるような、実行出来るようなコードに変換されてそのコードが実行されて実際にJavaScriptが実行される<br>
+JavaScriptエンジンとは、ブラウザーの中に搭載されているもの<br>
+Google ChromeだったらV8、FirefoxならSpiderMonkey、Microsoft EdgeだったらChakra、SafariならJavaScriptCoreそれぞれのブラウザによって変わる<br>
+つまり、TypeScriptコンパイラが使うものがTypeScriptの型（静的型付け）、JavaScriptエンジンで使うものがJavaScriptの型（動的型付け）になる<br>
