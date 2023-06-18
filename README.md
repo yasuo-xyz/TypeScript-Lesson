@@ -56,3 +56,8 @@ TypeScriptを使用する事によってドキュメントを半自動化し他�
 Linterとは実行する前にそのコードが正しいかどうか検証するツール（tscコマンドなど）<br>
 TypeScriptは肩付きLinterとゆう他のLinterとは違う良さがある（JavaScriptだとESLintなど）<br>
 
+## ES5へのコンパイラとしての側面を利用する為とは何か？
+
+コンパイルする時にダウングレード出来る（トランススパイラル）<br>
+バベルとゆうツールを使ってもダウングレード出来る<br>
+<!-- https://kangax.github.io/compat-table/es6/ -->
