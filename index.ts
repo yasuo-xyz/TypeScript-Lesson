@@ -21,3 +21,10 @@ let octal: number = 0o744;
 let single: string = 'hello';
 let double: string = "hello";
 let back: string = `hello`;
+
+// 型注釈と型推論の例
+// 型注釈とは、変数に型を明示的に指定すること、英語でいうとアノテーション
+let hasValue1: boolean = true;
+// 型推論とは、型注釈を省略しても型を推論してくれる機能
+let hasValue2 = true;
+// 基本的には型推論を使い、型推論では型が推論できない場合は型注釈を使う
