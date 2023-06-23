@@ -61,3 +61,11 @@ const fruits2: any[] = ['Apple', 'Banana', 'Grape', 1];
 // この場合の型推論はユニオンタイプになり、stringとnumberの両方が入っていい配列になる
 // 絶対に1つの型しか入れられない訳ではない
 const fruits3 = ['Apple', 'Banana', 'Grape', 1];
+
+// Tuple型を使用して、決まった内容の配列を作る方法の例
+// Tuple（読み：タプル）型は、決まった内容の配列を作る時に使う
+// 配列にも厳しく制限が掛かったものになる
+// TypeScriptは初期値は厳しくするのだがそれ以降は緩くなる
+const book: [string, number, boolean] = ['business', 1500, false];
+book.push(21);
+console.log(book[3]);
