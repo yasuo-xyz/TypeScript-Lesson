@@ -75,14 +75,32 @@ console.log(book[3]);
 // Enum型は、特定のまとまったグループのみを受け入れる列挙を使う時に使う
 // それを作るのにEnum型が必要になる
 // オブジェクトでの例
-const CoffeeSize = {
-    SHORT: 'SHORT',
-    TALL: 'TALL',
-    GRANDE: 'GRANDE',
-    VENTI: 'VENTI'
+// 要は特定のまとまったグループのみを受け入れる時に列挙型を使う
+enum CoffeeSize {
+    SHORT = 'SHORT',
+    TALL = 'TALL',
+    GRANDE = 'GRANDE',
+    VENTI = 'VENTI'
 };
 
 const coffee = {
     hot: true,
     size: CoffeeSize.TALL
 }
+coffee.size = CoffeeSize.SHORT;
+
+// この書き方もある
+// これは、列挙型の中身を省略して書く方法
+// この場合は、0から順番にインデックスが振られる
+enum CoffeeSize2 {
+    SHORT,
+    TALL,
+    GRANDE,
+    VENTI
+};
+
+const coffee2 = {
+    hot: true,
+    size: CoffeeSize2.TALL
+}
+coffee2.size = CoffeeSize2.SHORT;
