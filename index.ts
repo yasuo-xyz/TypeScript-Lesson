@@ -69,3 +69,20 @@ const fruits3 = ['Apple', 'Banana', 'Grape', 1];
 const book: [string, number, boolean] = ['business', 1500, false];
 book.push(21);
 console.log(book[3]);
+
+// Enumを使って、特定のまとまったグループのみを受け入れる列挙を使う方法の例
+// 列挙型とゆう新しい型を定義する時に使うEnum（イーナム）型がある
+// Enum型は、特定のまとまったグループのみを受け入れる列挙を使う時に使う
+// それを作るのにEnum型が必要になる
+// オブジェクトでの例
+const CoffeeSize = {
+    SHORT: 'SHORT',
+    TALL: 'TALL',
+    GRANDE: 'GRANDE',
+    VENTI: 'VENTI'
+};
+
+const coffee = {
+    hot: true,
+    size: CoffeeSize.TALL
+}
