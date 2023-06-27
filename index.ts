@@ -118,4 +118,13 @@ let banana = 'banana';
 banana = anything;
 // もし正しくTypeScriptを書く場合は、any型はなるべく使わない方がいい
 
-// Union型を使って、複数の型を許容する方法（例）
+// Union（読み：ユニオン）型を使って、複数の型を許容する方法（例）
+// number型とstring型一緒に入れたい時に使う
+// |←バーティカルラインとゆう
+let unionType: number | string = 10;
+let unionTypes: (number | string)[] = [21, 'hello'];
+// unionType.toUpperCase();
+// unionType = 'hello';
+// unionType.toUpperCase();
+
+// Literal型を使って、特定の値のみを許容する方法（例）
