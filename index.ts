@@ -68,7 +68,7 @@ const fruits3 = ['Apple', 'Banana', 'Grape', 1];
 // TypeScriptは初期値は厳しくするのだがそれ以降は緩くなる
 const book: [string, number, boolean] = ['business', 1500, false];
 book.push(21);
-console.log(book[3]);
+console.log(book[0]);
 
 // Enumを使って、特定のまとまったグループのみを受け入れる列挙を使う方法（例）
 // 列挙型とゆう新しい型を定義する時に使うEnum（イーナム）型がある
@@ -76,6 +76,7 @@ console.log(book[3]);
 // それを作るのにEnum型が必要になる
 // オブジェクトでの例
 // 要は特定のまとまったグループのみを受け入れる時に列挙型を使う
+// Enum型は、オブジェクトに似ているが、オブジェクトとは違い、列挙型は変更不可
 enum CoffeeSize {
     SHORT = 'SHORT',
     TALL = 'TALL',
@@ -127,4 +128,21 @@ let unionTypes: (number | string)[] = [21, 'hello'];
 // unionType = 'hello';
 // unionType.toUpperCase();
 
-// Literal型を使って、特定の値のみを許容する方法（例）
+// Literal（読み：リテラル）型を使って、特定の値のみを許容する方法（例）
+// 特定の決まった値のみを扱う型になる
+const apple: 'apple' = 'apple';
+const apple1: 0 = 0;
+const apple2: true = true;
+// 因みにconstは再代入できないので、constを使うとリテラル型になる、TypeScriptの仕様らしい
+// この書き方もある
+// これはリテラル型とユニオン型を組み合わせて作る方法
+let clothSize: 'small' | 'medium' | 'large' = 'large';
+const cloth: {
+    color: string;
+    size: 'small' | 'medium' | 'large'
+} = {
+    color: 'white',
+    size: clothSize
+};
+
+// Typeエイリアスを使って、複雑な型を変数のように扱う方法（例）
