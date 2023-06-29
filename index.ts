@@ -146,3 +146,17 @@ const cloth: {
 };
 
 // Typeエイリアスを使って、複雑な型を変数のように扱う方法（例）
+// Type型を変数のように扱うようにする事ができる
+// エイリアスは別名とゆう意味もあるので、別名として扱う事ができる
+type ClothSize = 'small' | 'medium' | 'large';
+const apple3 = 'apple';
+let clothSize2: ClothSize = 'large';
+const cloth2: {
+    color: string;
+    size: ClothSize
+} = {
+    color: 'white',
+    size: clothSize2
+};
+
+// 関数に型を適応させる方法（例）
