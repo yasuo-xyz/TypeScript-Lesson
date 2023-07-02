@@ -168,3 +168,19 @@ function add1(num1: number, num2: number): number {
 };
 
 // 関数の戻り値に型を適応させる方法（例）
+// もし関数が何も返さなかったらどうするのか？
+// 基本的には、void型を使い、undefined型は使わないうようにした方がいい
+// 以下sayHello関数
+function sayHello(): void {
+    console.log('Hello!');
+    return;
+}
+
+// ここでundefined型とゆうのが登場
+// 因みにundefined型は、滅多に使わない
+// undefined型は、undefinedとnullを扱うことが出来る
+// 以下tmp変数
+console.log(sayHello());
+let tmp: undefined;
+
+// undefined型とnull型（例）
