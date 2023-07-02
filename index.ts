@@ -184,3 +184,10 @@ console.log(sayHello());
 let tmp: undefined;
 
 // undefined型とnull型（例）
+// undefined型は、undefinedを入れる事が出来る
+// そしてundefined型に非常に似た型としてnull型がある
+// null型もundefined型と同じようにnullしか基本的に入れる事が出来ない
+let tmpUndefined: undefined = undefined;
+let tmpNull: null = null;
+
+// 関数型を使って、特定の関数のみを代入出来る変数を作る（例）
