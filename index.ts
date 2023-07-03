@@ -191,3 +191,9 @@ let tmpUndefined: undefined = undefined;
 let tmpNull: null = null;
 
 // 関数型を使って、特定の関数のみを代入出来る変数を作る（例）
+// 今回は関数を保持する変数に型を付ける方法を学ぶ
+// 今までは関数宣言する時の関数に型を付けていた
+// 関数の型注釈とゆう
+const anotherAdd: (n1: number, n2: number) => number = add1;
+// アロー関数の場合
+const doubleNumber: (num: number) => number = num => num * 2;
