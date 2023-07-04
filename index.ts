@@ -197,3 +197,17 @@ let tmpNull: null = null;
 const anotherAdd: (n1: number, n2: number) => number = add1;
 // アロー関数の場合
 const doubleNumber: (num: number) => number = num => num * 2;
+
+// callback関数の型はこう書く（例）
+// 以下doubleAndHandle関数
+// => numberのところをvoidにすると
+// return doubleNum;のところが無視されエラーも出なくなり緩くなるから注意した方がいい
+function doubleAndHandle(num: number, cb: (num: number) => number): void {
+    const doubleNum = cb(num * 2);
+    console.log(doubleNum);
+}
+doubleAndHandle(21, doubleNum => {
+    return doubleNum;
+});
+
+// unknown型を使って、柔軟でanyよりも厳しい型を定義する方法（例）
