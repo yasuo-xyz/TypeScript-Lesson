@@ -3,6 +3,7 @@ console.log(hello);
 
 // ドキュメントとしての側面を利用する為とは何か（例）
 // 関数（function）関数名（add）ドキュメント
+// 以下の処理は、2つの数値を受け取り、その合計を返す関数です。
 function add(a: number, b: number): number {
     return a + b;
 }
@@ -211,3 +212,28 @@ doubleAndHandle(21, doubleNum => {
 });
 
 // unknown型を使って、柔軟でanyよりも厳しい型を定義する方法（例）
+// any型（なんでも入る型）と、非常に似ていて、any型よりも少し厳しい型になる
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+unknownInput = 'hello';
+unknownInput = 21;
+unknownInput = true;
+// 入れれるのは入れれるが使う時は注意が必要
+text = anyInput;
+// typeofメソッドを使うと、変数の型を調べる事が出来る（元々JavaScriptであったやつでTypeScriptではない）
+if (typeof unknownInput === 'string') {
+    text = unknownInput;
+}
+
+// any型と比較
+let unknownInput1: unknown;
+let anyInput1: any;
+let text1: string;
+anyInput1 = 'hello';
+anyInput1 = 21;
+anyInput1 = true;
+text1 = anyInput1;
+
+// never型を使って、起こり得ない値の型を使用する方法（例）
+// never型とは、決して何も返さないってゆう型
