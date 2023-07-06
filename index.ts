@@ -8,6 +8,8 @@ function add(a: number, b: number): number {
     return a + b;
 }
 
+// // TypeScriptの型はこう書く！（以下例）
+
 // boolean型、number型、string型（例）
 // boolean型はtrueかfalseのみ
 let hasValue: boolean = true;
@@ -237,3 +239,9 @@ text1 = anyInput1;
 
 // never型を使って、起こり得ない値の型を使用する方法（例）
 // never型とは、決して何も返さないってゆう型
+// void型とは違い、void型は何かしらの値を返す事が出来るが、never型は何も返さない
+// 以下errorを投げる関数
+function error(message: string): never {
+    throw new Error(message);
+}
+console.log(error('This is an error'));
