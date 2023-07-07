@@ -70,3 +70,39 @@ JavaScriptエンジンとゆうのによってJavaScriptは型検査が行われ
 JavaScriptエンジンとは、ブラウザーの中に搭載されているもの<br>
 Google ChromeだったらV8、FirefoxならSpiderMonkey、Microsoft EdgeだったらChakra、SafariならJavaScriptCoreそれぞれのブラウザによって変わる<br>
 つまり、TypeScriptコンパイラが使うものがTypeScriptの型（静的型付け）、JavaScriptエンジンで使うものがJavaScriptの型（動的型付け）になる<br>
+
+## コンパイラを使う方法
+
+今まではtscコマンドでコンパイルしていたが、コンパイルする時実はいろんな設定をする事が出来る<br>
+
+1. watxhモードを使って、保存時に自動的にTSからJSにコンパイルする方法<br>
+これをする事によって保存時に自動的にコンパイルされるようになる<br>
+
+2. tsc --initでtsconfig.jsonを作り、全てのファイルを一気にコンパイルする方法<br>
+これをする事で、色んなファイルを一気にコンパイルする事が出来る<br>
+その上で、tsconfig.jsonに色んな設定を書く事が出来る<br>
+
+3. include（読み：インクルード）とexclude（読み：エクスクルード）とfiles（読み：ファイル）を使ってコンパイルするファイルを選ぶ方法<br>
+これで何をコンパイルするのか、を指定する事が出来る<br>
+
+4. target（読み：ターゲット）を指定して、特定のバージョンのJavaScriptに変換する方法<br>
+コンパイルされたJavaScriptのバージョンを指定する事が出来る<br>
+
+5. lib（読み：リブ）を指定して、TypeScriptが用意している型の定義を追加する<br>
+これは、TypeScriptが用意してる型の定義を追加する事が出来る<br>
+
+6. allowJs（アロージェイエス）、checkJs（チェックジェイエス）、jsx（ジェイエスエックス）、declaration（デクラレイション）、declarationMap（デクラレイションマップ）の設定はこう使う<br>
+
+7. SourceMap（ソースマップ）を使用して、ブラウザでTypeScriptを操作する方法<br>
+デバックをしやすくするものらしい<br>
+
+8. outDir（アウトディレクトリ）とrootDir（ルートディレクトリ）、removeComments（リムーブコメンツ）、noEmit（ノーエミット）、downlevellteration（ダウンレベルリテレーション）の使い方<br>
+
+9. noEmitOnError（（ノーエミットオンエラー）オプションを使って、エラーが出た時にコンパイルしない方法<br>
+エラーが出たら何か出力するかどうかみたいな感じ<br>
+
+10. nolmplicitAny（ノーインプリッシュトエニー）やstrictNullChecks（ストリクトヌルチェック）などのstrict（ストリクト）の設定はこう使う<br>
+厳しい設定、そのコードをちゃんと書けるのか、何か変なanyとかあったらダメだよみたいな、そうゆうのを書く事が出来る<br>
+
+11. 綺麗なコードを書くための設定をする方法<br>
+色んなコンパイラの設定、どうやってコンパイルするかどうかの設定を色んな設定が入るみたいな感じ<br>
