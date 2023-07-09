@@ -77,6 +77,8 @@ Google ChromeだったらV8、FirefoxならSpiderMonkey、Microsoft Edgeだっ�
 
 1. watxhモードを使って、保存時に自動的にTSからJSにコンパイルする方法<br>
 これをする事によって保存時に自動的にコンパイルされるようになる<br>
+実際どうやるかとゆうと、tsc [ファイル名] --watchかtsc [ファイル名] -wコマンドで出来る<br>
+止める時は「control」 +「c」で止まる（Macの場合）<br>
 
 2. tsc --initでtsconfig.jsonを作り、全てのファイルを一気にコンパイルする方法<br>
 これをする事で、色んなファイルを一気にコンパイルする事が出来る<br>
