@@ -135,7 +135,14 @@ trueの場合だと、tscコマンドでコンパイルした時新しいファ�
 要は自分がライブラリーとかを使って他の人に使って欲しい時に使う物になるって事<br>
 
 7. SourceMap（ソースマップ）を使用して、ブラウザでTypeScriptを操作する方法<br>
+以下はtsconfig.jsonファイル内の説明<br>
 デバックをしやすくするものらしい<br>
+TypeScriptとJavaScriptの架け橋なる、マップファイルとゆうのを作成するもの<br>
+具体的にいつ使うかとゆうと、ブラウザでTypeScriptのファイルを見たい時に使う<br>
+ブラウザがTypeScriptを理解出来るようにする為のものになる<br>
+どうゆう事かとゆうと、tscコマンドを打つと.jsファイルが作成されその次に.js.mapとゆうのが作成される<br>
+この.js.mapはTypeScriptを作り出すファイルになっている、JavaScriptからTypeScriptを作り出すって感じ<br>
+
 
 8. outDir（アウトディレクトリ）とrootDir（ルートディレクトリ）、removeComments（リムーブコメンツ）、noEmit（ノーエミット）、downlevellteration（ダウンレベルリテレーション）の使い方<br>
 
