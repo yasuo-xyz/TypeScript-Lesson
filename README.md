@@ -85,10 +85,24 @@ Google ChromeだったらV8、FirefoxならSpiderMonkey、Microsoft Edgeだっ�
 その上で、tsconfig.jsonに色んな設定を書く事が出来る<br>
 tsconfig.jsonとは、TypeScriptの設定ファイル<br>
 tsconfig.json作成コマンド：tsc --init<br>
-tsconfig.jsonファイルが作成された状態でtscコマンドを打つと今あるTypeScriptのファイル全部がコンパイルされる
+tsconfig.jsonファイルが作成された状態でtscコマンドを打つと今あるTypeScriptのファイル全部がコンパイルされる<br>
 
 3. include（読み：インクルード）とexclude（読み：エクスクルード）とfiles（読み：ファイル）を使ってコンパイルするファイルを選ぶ方法<br>
 これで何をコンパイルするのか、を指定する事が出来る<br>
+下記はtsconfig.jsonファイル内の説明
+compilerOptions（コンパイルオプション）とは？<br>
+どうやってコンパイルするかを決めるオプション<br>
+includeとは？<br>
+どのファイルをコンパイルするかのオプション<br>
+デフォルトでは、全部コンパイルされる設定になっている<br>
+excludeで同じ設定をしたら適用されない<br>
+excludeとは？<br>
+特定のファイルを除くオプション<br>
+＊←ワイルドカードと言い、なんでもいいよ、とゆう意味<br>
+＊*2個付けて設定すると、どの階層にいても適用出来る<br>
+filesとは？<br>
+includeと非常に似ていて、絶対パスか相対パスを書くのみになるオプション<br>
+exclude内で同じのを設定しても適用される<br>
 
 4. target（読み：ターゲット）を指定して、特定のバージョンのJavaScriptに変換する方法<br>
 コンパイルされたJavaScriptのバージョンを指定する事が出来る<br>
