@@ -113,10 +113,26 @@ targetとは？<br>
 
 5. lib（読み：リブ）を指定して、TypeScriptが用意している型の定義を追加する<br>
 これは、TypeScriptが用意してる型の定義を指定してコンパイラのコンパイルを考慮してコンパイルしてくれる設定<br>
+以下はtsconfig.jsonファイル内の説明<br>
 例えば、libの設定の中に、ES6を入れるとES6に関する全てのメソッド、プロパティの一覧で載ってる型の定義をコンパイルする時に一緒に使える事になる<br>
-因みにtargetで設定しているES6の中身は、ES6、DOM、DOM.Iterable、ScriptHostがデフォルトで入ってる構成になる
+因みにtargetで設定しているES6の中身は、ES6、DOM、DOM.Iterable、ScriptHostがデフォルトで入ってる構成になる<br>
 
 6. allowJs（アロージェイエス）、checkJs（チェックジェイエス）、jsx（ジェイエスエックス）、declaration（デクラレイション）、declarationMap（デクラレイションマップ）の設定はこう使う<br>
+以下はtsconfig.jsonファイル内の説明<br>
+allowJsとは？<br>
+allowJsがtrueの場合、JavaScriptをコンパイルの対象に含む、つまり.jsファイルを含む設定<br>
+TypeScriptファイルだけではなくJavaScriptファイルもコンパイルする設定<br>
+要はJavaScriptをコンパイラの対象にコンパイルの対象にしてるって意味なる<br>
+checkJsとは？<br>
+allowJsと一緒に使う必要があるので、checkJs単体では使えない<br>
+どうゆう物かとゆうと、TypeScriptファイルのようにJavaScriptファイルもエラーをチェックする設定<br>
+jsxとは？<br>
+ReactJSの為に使う設定<br>
+declaration、declarationMapとは？<br>
+型の定義ファイルを作成する設定<br>
+trueの場合だと、tscコマンドでコンパイルした時新しいファイルが作成され.d.tsって物が作られる<br>
+どうゆう物かとゆうと、出来上がったJavaScriptの型の情報その自分で自作したライブラリー全部の型の情報が載ってるってのが型定義ファイルになるって意味<br>
+要は自分がライブラリーとかを使って他の人に使って欲しい時に使う物になるって事<br>
 
 7. SourceMap（ソースマップ）を使用して、ブラウザでTypeScriptを操作する方法<br>
 デバックをしやすくするものらしい<br>
