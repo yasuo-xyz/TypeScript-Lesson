@@ -145,6 +145,19 @@ TypeScriptとJavaScriptの架け橋なる、マップファイルとゆうのを
 
 
 8. outDir（アウトディレクトリ）とrootDir（ルートディレクトリ）、removeComments（リムーブコメンツ）、noEmit（ノーエミット）、downlevellteration（ダウンレベルリテレーション）の使い方<br>
+outDirとは？<br>
+TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を決める事が出来る設定<br>
+
+rootDirとは？<br>
+指定したディレクトリしか出力されない<br>
+
+removeCommentsとは？<br>
+コメントを消すかどうかの設定<br>
+
+noEmitとは？<br>
+何も出力しない設定<br>
+どうゆう事かとゆうと、TypeScriptの型チェックだけして出力はされないって事<br>
+
 
 9. noEmitOnError（（ノーエミットオンエラー）オプションを使って、エラーが出た時にコンパイルしない方法<br>
 エラーが出たら何か出力するかどうかみたいな感じ<br>
