@@ -149,7 +149,7 @@ outDirとは？<br>
 TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を決める事が出来る設定<br>
 
 　8.1rootDirとは？<br>
-指定したディレクトリしか出力されない<br>
+　　　指定したディレクトリしか出力されない<br>
 
 removeCommentsとは？<br>
 コメントを消すかどうかの設定<br>
