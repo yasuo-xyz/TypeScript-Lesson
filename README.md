@@ -151,13 +151,16 @@ TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を
 　8.1rootDirとは？<br>
 　　指定したディレクトリしか出力されない<br>
 
-removeCommentsとは？<br>
-コメントを消すかどうかの設定<br>
+　8.2removeCommentsとは？<br>
+　　コメントを消すかどうかの設定<br>
 
-noEmitとは？<br>
-何も出力しない設定<br>
-どうゆう事かとゆうと、TypeScriptの型チェックだけして出力はされないって事<br>
+　8.3noEmitとは？<br>
+　　何も出力しない設定<br>
+　　どうゆう事かとゆうと、TypeScriptの型チェックだけして出力はされないって事<br>
 
+　8.4downlevellterationとは？<br>
+　　target内のES5とES3のみに使用出来る物
+　　ES5、ES3にコンパイルする時にループ系（for-of）をちゃんと出力出来るようにしてくれる物らしい（trueの場合）<br>
 
 9. noEmitOnError（（ノーエミットオンエラー）オプションを使って、エラーが出た時にコンパイルしない方法<br>
 エラーが出たら何か出力するかどうかみたいな感じ<br>
