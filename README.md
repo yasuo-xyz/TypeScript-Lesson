@@ -148,7 +148,7 @@ TypeScriptとJavaScriptの架け橋なる、マップファイルとゆうのを
 outDirとは？<br>
 TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を決める事が出来る設定<br>
 
-rootDirとは？<br>
+8.1 rootDirとは？<br>
 指定したディレクトリしか出力されない<br>
 
 removeCommentsとは？<br>
