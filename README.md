@@ -90,26 +90,31 @@ tsconfig.jsonファイルが作成された状態でtscコマンドを打つと�
 3. include（読み：インクルード）とexclude（読み：エクスクルード）とfiles（読み：ファイル）を使ってコンパイルするファイルを選ぶ方法<br>
 これで何をコンパイルするのか、を指定する事が出来る<br>
 以下はtsconfig.jsonファイル内の説明
-compilerOptions（コンパイルオプション）とは？<br>
-どうやってコンパイルするかを決めるオプション<br>
-includeとは？<br>
-どのファイルをコンパイルするかのオプション<br>
-デフォルト（何もない状態）だと、全部コンパイルされる設定になっている<br>
-excludeで同じ設定をしたら適用されない<br>
-excludeとは？<br>
-特定のファイルを除くオプション<br>
-＊←ワイルドカードと言い、なんでもいいよ、とゆう意味<br>
-＊*2個付けて設定すると、どの階層にいても適用出来る<br>
-filesとは？<br>
-includeと非常に似ていて、絶対パスか相対パスを書くのみになるオプション<br>
-exclude内で同じのを設定しても適用される<br>
+
+　3.1compilerOptions（コンパイルオプション）とは？<br>
+　　どうやってコンパイルするかを決めるオプション<br>
+
+　3.2includeとは？<br>
+　　どのファイルをコンパイルするかのオプション<br>
+　　デフォルト（何もない状態）だと、全部コンパイルされる設定になっている<br>
+　　excludeで同じ設定をしたら適用されない<br>
+
+　3.3excludeとは？<br>
+　　特定のファイルを除くオプション<br>
+　　＊←ワイルドカードと言い、なんでもいいよ、とゆう意味<br>
+　　＊*2個付けて設定すると、どの階層にいても適用出来る<br>
+
+　3.4filesとは？<br>
+　　includeと非常に似ていて、絶対パスか相対パスを書くのみになるオプション<br>
+　　exclude内で同じのを設定しても適用される<br>
 
 4. target（読み：ターゲット）を指定して、特定のバージョンのJavaScriptに変換する方法<br>
 コンパイルされたJavaScriptのバージョンを指定する事が出来る<br>
 以下はtsconfig.jsonファイル内の説明<br>
-targetとは？<br>
-どうゆうJavaScriptのバージョンにコンパイルするかを決める設定<br>
-デフォルト（何もない状態）だと、ES3になっている<br>
+
+　4.1targetとは？<br>
+　　どうゆうJavaScriptのバージョンにコンパイルするかを決める設定<br>
+　　デフォルト（何もない状態）だと、ES3になっている<br>
 
 5. lib（読み：リブ）を指定して、TypeScriptが用意している型の定義を追加する<br>
 これは、TypeScriptが用意してる型の定義を指定してコンパイラのコンパイルを考慮してコンパイルしてくれる設定<br>
@@ -119,20 +124,24 @@ targetとは？<br>
 
 6. allowJs（アロージェイエス）、checkJs（チェックジェイエス）、jsx（ジェイエスエックス）、declaration（デクラレイション）、declarationMap（デクラレイションマップ）の設定はこう使う<br>
 以下はtsconfig.jsonファイル内の説明<br>
-allowJsとは？<br>
-allowJsがtrueの場合、JavaScriptをコンパイルの対象に含む、つまり.jsファイルを含む設定<br>
-TypeScriptファイルだけではなくJavaScriptファイルもコンパイルする設定<br>
-要はJavaScriptをコンパイラの対象にコンパイルの対象にしてるって意味なる<br>
-checkJsとは？<br>
-allowJsと一緒に使う必要があるので、checkJs単体では使えない<br>
-どうゆう物かとゆうと、TypeScriptファイルのようにJavaScriptファイルもエラーをチェックする設定<br>
-jsxとは？<br>
-ReactJSの為に使う設定<br>
-declaration、declarationMapとは？<br>
-型の定義ファイルを作成する設定<br>
-trueの場合だと、tscコマンドでコンパイルした時新しいファイルが作成され.d.tsって物が作られる<br>
-どうゆう物かとゆうと、出来上がったJavaScriptの型の情報その自分で自作したライブラリー全部の型の情報が載ってるってのが型定義ファイルになるって意味<br>
-要は自分がライブラリーとかを使って他の人に使って欲しい時に使う物になるって事<br>
+
+　6.1allowJsとは？<br>
+　　allowJsがtrueの場合、JavaScriptをコンパイルの対象に含む、つまり.jsファイルを含む設定<br>
+　　TypeScriptファイルだけではなくJavaScriptファイルもコンパイルする設定<br>
+　　要はJavaScriptをコンパイラの対象にコンパイルの対象にしてるって意味なる<br>
+
+　6.2checkJsとは？<br>
+　　allowJsと一緒に使う必要があるので、checkJs単体では使えない<br>
+　　どうゆう物かとゆうと、TypeScriptファイルのようにJavaScriptファイルもエラーをチェックする設定<br>
+
+　6.3jsxとは？<br>
+　　ReactJSの為に使う設定<br>
+
+　6.4declaration、declarationMapとは？<br>
+　　型の定義ファイルを作成する設定<br>
+　　trueの場合だと、tscコマンドでコンパイルした時新しいファイルが作成され.d.tsって物が作られる<br>
+　　どうゆう物かとゆうと、出来上がったJavaScriptの型の情報その自分で自作したライブラリー全部の型の情報が載ってるってのが型定義　　ファイルになるって意味<br>
+　　要は自分がライブラリーとかを使って他の人に使って欲しい時に使う物になるって事<br>
 
 7. SourceMap（ソースマップ）を使用して、ブラウザでTypeScriptを操作する方法<br>
 以下はtsconfig.jsonファイル内の説明<br>
@@ -159,11 +168,14 @@ TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を
 　　どうゆう事かとゆうと、TypeScriptの型チェックだけして出力はされないって事<br>
 
 　8.4downlevellterationとは？<br>
-　　target内のES5とES3のみに使用出来る物
+　　target内のES5とES3のみに使用出来る物<br>
 　　ES5、ES3にコンパイルする時にループ系（for-of）をちゃんと出力出来るようにしてくれる物らしい（trueの場合）<br>
 
 9. noEmitOnError（（ノーエミットオンエラー）オプションを使って、エラーが出た時にコンパイルしない方法<br>
 エラーが出たら何か出力するかどうかみたいな感じ<br>
+
+　9.1noEmitOnErrorとは？<br>
+　　エラーが起こったらJavaScriptに変換しない、JavaScriptのファイルを出力しない設定<br>
 
 10. nolmplicitAny（ノーインプリッシュトエニー）やstrictNullChecks（ストリクトヌルチェック）などのstrict（ストリクト）の設定はこう使う<br>
 厳しい設定、そのコードをちゃんと書けるのか、何か変なanyとかあったらダメだよみたいな、そうゆうのを書く事が出来る<br>
