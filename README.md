@@ -91,20 +91,20 @@ tsconfig.jsonファイルが作成された状態でtscコマンドを打つと�
 これで何をコンパイルするのか、を指定する事が出来る<br>
 以下はtsconfig.jsonファイル内の説明
 
-　3.1compilerOptions（コンパイルオプション）とは？<br>
+　3.1 compilerOptions（コンパイルオプション）とは？<br>
 　　どうやってコンパイルするかを決めるオプション<br>
 
-　3.2includeとは？<br>
+　3.2 includeとは？<br>
 　　どのファイルをコンパイルするかのオプション<br>
 　　デフォルト（何もない状態）だと、全部コンパイルされる設定になっている<br>
 　　excludeで同じ設定をしたら適用されない<br>
 
-　3.3excludeとは？<br>
+　3.3 excludeとは？<br>
 　　特定のファイルを除くオプション<br>
 　　＊←ワイルドカードと言い、なんでもいいよ、とゆう意味<br>
 　　＊*2個付けて設定すると、どの階層にいても適用出来る<br>
 
-　3.4filesとは？<br>
+　3.4 filesとは？<br>
 　　includeと非常に似ていて、絶対パスか相対パスを書くのみになるオプション<br>
 　　exclude内で同じのを設定しても適用される<br>
 
@@ -112,7 +112,7 @@ tsconfig.jsonファイルが作成された状態でtscコマンドを打つと�
 コンパイルされたJavaScriptのバージョンを指定する事が出来る<br>
 以下はtsconfig.jsonファイル内の説明<br>
 
-　4.1targetとは？<br>
+　4.1 targetとは？<br>
 　　どうゆうJavaScriptのバージョンにコンパイルするかを決める設定<br>
 　　デフォルト（何もない状態）だと、ES3になっている<br>
 
@@ -125,19 +125,19 @@ tsconfig.jsonファイルが作成された状態でtscコマンドを打つと�
 6. allowJs（アロージェイエス）、checkJs（チェックジェイエス）、jsx（ジェイエスエックス）、declaration（デクラレイション）、declarationMap（デクラレイションマップ）の設定はこう使う<br>
 以下はtsconfig.jsonファイル内の説明<br>
 
-　6.1allowJsとは？<br>
+　6.1 allowJsとは？<br>
 　　allowJsがtrueの場合、JavaScriptをコンパイルの対象に含む、つまり.jsファイルを含む設定<br>
 　　TypeScriptファイルだけではなくJavaScriptファイルもコンパイルする設定<br>
 　　要はJavaScriptをコンパイラの対象にコンパイルの対象にしてるって意味なる<br>
 
-　6.2checkJsとは？<br>
+　6.2 checkJsとは？<br>
 　　allowJsと一緒に使う必要があるので、checkJs単体では使えない<br>
 　　どうゆう物かとゆうと、TypeScriptファイルのようにJavaScriptファイルもエラーをチェックする設定<br>
 
-　6.3jsxとは？<br>
+　6.3 jsxとは？<br>
 　　ReactJSの為に使う設定<br>
 
-　6.4declaration、declarationMapとは？<br>
+　6.4 declaration、declarationMapとは？<br>
 　　型の定義ファイルを作成する設定<br>
 　　trueの場合だと、tscコマンドでコンパイルした時新しいファイルが作成され.d.tsって物が作られる<br>
 　　どうゆう物かとゆうと、出来上がったJavaScriptの型の情報その自分で自作したライブラリー全部の型の情報が載ってるってのが型定義　　ファイルになるって意味<br>
@@ -157,28 +157,65 @@ TypeScriptとJavaScriptの架け橋なる、マップファイルとゆうのを
 outDirとは？<br>
 TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を決める事が出来る設定<br>
 
-　8.1rootDirとは？<br>
+　8.1 rootDirとは？<br>
 　　指定したディレクトリしか出力されない<br>
 
-　8.2removeCommentsとは？<br>
+　8.2 removeCommentsとは？<br>
 　　コメントを消すかどうかの設定<br>
 
-　8.3noEmitとは？<br>
+　8.3 noEmitとは？<br>
 　　何も出力しない設定<br>
 　　どうゆう事かとゆうと、TypeScriptの型チェックだけして出力はされないって事<br>
 
-　8.4downlevellterationとは？<br>
+　8.4 downlevellterationとは？<br>
 　　target内のES5とES3のみに使用出来る物<br>
 　　ES5、ES3にコンパイルする時にループ系（for-of）をちゃんと出力出来るようにしてくれる物らしい（trueの場合）<br>
 
 9. noEmitOnError（（ノーエミットオンエラー）オプションを使って、エラーが出た時にコンパイルしない方法<br>
 エラーが出たら何か出力するかどうかみたいな感じ<br>
 
-　9.1noEmitOnErrorとは？<br>
+　9.1 noEmitOnErrorとは？<br>
 　　エラーが起こったらJavaScriptに変換しない、JavaScriptのファイルを出力しない設定<br>
 
 10. nolmplicitAny（ノーインプリッシュトエニー）やstrictNullChecks（ストリクトヌルチェック）などのstrict（ストリクト）の設定はこう使う<br>
 厳しい設定、そのコードをちゃんと書けるのか、何か変なanyとかあったらダメだよみたいな、そうゆうのを書く事が出来る<br>
+
+　10.1 strictとは？<br>
+　　下記のもの全てのまとめた効果を持っている<br>
+　　"noImplicitAny"<br>
+　　"strictNullChecks"<br>
+　　"strictFunctionTypes"<br>
+　　"strictBindCallApply"<br>
+　　"strictPropertyInitialization"<br>
+　　"noImplicitThis"<br>
+　　"alwaysStrict"<br>
+
+　10.2 nolmplicitAnyとは？<br>
+　　暗黙的なanyは避けよう、暗黙的な意味はエラーを出すとゆう設定<br>
+　　明示的にanyにする場合はエラーは出ないがそもそもあまりよろしくない<br>
+　　つまり何も型を指定していない時に出るanyはよろしくないよとゆう意味<br>
+　　関数は後で書き換える事がない為一生同じ状態なので使い回す事がない<br>
+　　変数は最初にanyに設定しても後で文字列などに変えると絶対に文字列！とTypeScriptが理解しているからエラーが起きないらしい<br>
+
+　10.3 strictNullChecksとは？<br>
+　　true場合は厳しいnullチェック<br>
+　　VSCode参照<br>
+
+　10.4 strictFunctionTypesとは？<br>
+　　クラスの継承時に起こりえるバグの可能性を防ぐもの<br>
+
+　10.5 strictBindCallApplyとは？<br>
+　　コール、アプライ、バインドとゆうメソッドとゆう関数に適用するもの<br>
+
+　10.6 strictPropertyInitializationとは？<br>
+　　クラスを使用する時に使うもの<br>
+
+　10.7 noImplicitThisとは？<br>
+　　関数の中にある値（例：this）が一体何を示したのか分からない時にちゃんとエラーが起きるもの<br>
+　　暗黙的にthisがanyになってしまう時とかにエラーが起きるとゆうもの<br>
+
+　10.8 alwaysStrictとは？<br>
+　　JavaScriptに変換した時に"use strict"があるかないとゆうもの<br>
 
 11. 綺麗なコードを書くための設定をする方法<br>
 色んなコンパイラの設定、どうやってコンパイルするかどうかの設定を色んな設定が入るみたいな感じ<br>

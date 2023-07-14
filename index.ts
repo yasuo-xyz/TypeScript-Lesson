@@ -245,3 +245,25 @@ function error(message: string): never {
     throw new Error(message);
 }
 console.log(error('This is an error'));
+
+// nolmplicitAnyとは？（例）
+// 以下true場合
+function echo(message: string) {
+    return message;
+}
+let implicitAny;
+implicitAny = 'implicitAny';
+implicitAny.toUpperCase();
+
+// strictNullChecksとは？（例）
+// 以下true場合は、エラーが出る
+// let nullableMessage: string = null;
+// let undefinedadbleMessage: string = undefined;
+// let onlyNull: null = undefined;
+// let onlyUndefined: undefined = null;
+
+// ただしstringとnullも入れたい場合はオア演算時（｜）を入れるユニオン型にするとエラーが出なくなる
+let nullableMessage1: string | null = null;
+let undefinedadbleMessage1: string | undefined = undefined;
+let onlyNull1: null = null;
+let onlyUndefined1: undefined = undefined;
