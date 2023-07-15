@@ -219,3 +219,15 @@ TypeScriptがコンパイルされてJavaScriptに出力する時の出力先を
 
 11. 綺麗なコードを書くための設定をする方法<br>
 色んなコンパイラの設定、どうやってコンパイルするかどうかの設定を色んな設定が入るみたいな感じ<br>
+
+　11.1 "noUnusedLocals"とは？<br>
+　　Unusedでローカル変数を使ってなかった場合ダメだよとゆう意味<br>
+
+　11.2 "noUnusedParameters"とは？<br>
+　　関数のパラメーターによって使われる<br>
+
+　11.3 "noImplicitReturns"とは？<br>
+　　暗黙的なリターンはダメとゆう意味<br>
+
+　11.4 "noFallthroughCasesInSwitch"とは？<br>
+　　Switch文の時に使えるようなものになる<br>
