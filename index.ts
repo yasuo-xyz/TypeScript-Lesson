@@ -267,3 +267,14 @@ let nullableMessage1: string | null = null;
 let undefinedadbleMessage1: string | undefined = undefined;
 let onlyNull1: null = null;
 let onlyUndefined1: undefined = undefined;
+
+// オブジェクト（例）
+// Person
+{
+    name: {
+        firstName: "Peter"  
+        lastName: "Quill"
+    },
+    age: 38,
+    gender: "male"
+};
