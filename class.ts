@@ -12,7 +12,23 @@ class Person {
         // thisはクラス内のフィールドを参照する時に使う
         this.name = initName;
     }
+    // クラスにメソッドを追加する方法（例）
+    // greetingメソッド（第1引数）挨拶をするとゆう意味
+    greeting(this: { name: string }) {
+        console.log(`Hello! My name is ${this.name}`);
+    }
 }
 // newキーワードを使ってPersonクラスのオブジェクトを作成する事が出来る
 const quill = new Person("Quill");
-console.log(quill);
+// console.log(quill);
+quill.greeting();
+
+// オブジェクト
+// 上記のgretingメソッドをそのまま使い回してる感じ
+const anotherQuill = {
+    // nameを追加している
+    name: "anotherQuill",
+    // 下記の部分がthisになるがnameがない状態になるのでundefined（エラー）になる
+    anotherGreeting: quill.greeting
+}
+anotherQuill.anotherGreeting();
