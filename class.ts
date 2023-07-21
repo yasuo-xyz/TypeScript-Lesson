@@ -2,6 +2,7 @@
 // クラス名は最初大文字で始めるのが基本らしい
 // 糖衣構文？というらしい
 // クラスはオブジェクトの設計図（再確認）
+// クラスを定義すると、同時にインスタンスを表す今回の場合だとPerson型が生成される
 class Person {
     // nameフィールド、nameプロパティと言われる、nameの部分はどんな名前でも良い
     name: string;
@@ -14,7 +15,7 @@ class Person {
     }
     // クラスにメソッドを追加する方法（例）
     // greetingメソッド（第1引数）挨拶をするとゆう意味
-    greeting(this: { name: string }) {
+    greeting(this: Person) {
         console.log(`Hello! My name is ${this.name}`);
     }
 }
@@ -29,6 +30,6 @@ const anotherQuill = {
     // nameを追加している
     name: "anotherQuill",
     // 下記の部分がthisになるがnameがない状態になるのでundefined（エラー）になる
-    anotherGreeting: quill.greeting
+    greeting: quill.greeting
 }
-anotherQuill.anotherGreeting();
+anotherQuill.greeting();
