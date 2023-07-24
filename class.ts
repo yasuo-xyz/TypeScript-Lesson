@@ -6,18 +6,21 @@
 class Person {
     // nameフィールド、nameプロパティと言われる、nameの部分はどんな名前でも良い
     // デフォルトではパブリックになる（どこでも使える）
-    name: string;
+    // name: string;
+
     // ageフィールド
     // プライベートにすると、クラスの外からはアクセスできなくなる
-    private age: number;
+    // private age: number;
 
     // コンストラクタ関数（予約語、メソッド）
     // 何をするものかとゆうと、今回Personとゆう設計図を元にオブジェクトを作成する時に実行される関数になる
     // つまり初期化とかする時、最初の処理をする時に便利な関数
-    constructor(initName: string, initAge: number) {
+    // 初期化の処理を省略する方法（例）
+    // 変わったのは、引数の部分のみ
+    constructor(public name: string, private age: number) {
         // thisはクラス内のフィールドを参照する時に使う
-        this.name = initName;
-        this.age = initAge;
+        // this.name = initName;
+        // this.age = initAge;
     }
     incrementAge() {
         this.age += 1;
