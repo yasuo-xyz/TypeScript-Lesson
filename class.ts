@@ -32,10 +32,10 @@ class Person {
     }
 }
 // newキーワードを使ってPersonクラスのオブジェクトを作成する事が出来る
-const quill = new Person("Quill", 38);
+// const quill = new Person("Quill", 38);
 // console.log(quill);
-quill.incrementAge();
-quill.greeting();
+// quill.incrementAge();
+// quill.greeting();
 
 // オブジェクト
 // 上記のgretingメソッドをそのまま使い回してる感じ
@@ -46,3 +46,17 @@ quill.greeting();
     // greeting: quill.greeting
 // }
 // anotherQuill.greeting();
+
+// extendsを使用して、他のクラスの機能を継承する方法（例）
+// 記述の内容としては、上記のPersonの内容をTeacherにコピーするとゆう意味
+// もし、何か追加したい場合は、コンストラクタ関数とsuper関数を使わないといけない
+class Teacher extends Person {
+    constructor(name: string, age: number, public subject: string) {
+        super(name, age);
+    }
+    greeting() {
+        console.log(`Hello! My name is ${this.name}. I am ${this.age} years old.`);
+    }
+}
+const teacher = new Teacher("Quill", 38, "Math");
+teacher.greeting();
