@@ -17,7 +17,7 @@ class Person {
     // つまり初期化とかする時、最初の処理をする時に便利な関数
     // 初期化の処理を省略する方法（例）
     // 変わったのは、引数の部分のみ
-    constructor(public name: string, private age: number) {
+    constructor(public name: string, protected age: number) {
         // thisはクラス内のフィールドを参照する時に使う
         // this.name = initName;
         // this.age = initAge;
