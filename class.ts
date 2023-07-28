@@ -51,7 +51,21 @@ class Person {
 // 記述の内容としては、上記のPersonの内容をTeacherにコピーするとゆう意味
 // もし、何か追加したい場合は、コンストラクタ関数とsuper関数を使わないといけない
 class Teacher extends Person {
-    constructor(name: string, age: number, public subject: string) {
+    // ゲッターは、get関数使う
+    get subject() {
+        if (!this._subject) {
+            throw new Error("There is no subject.");
+        }
+        return this._subject;
+    }
+    // セッターは、set関数使う
+    set subject(value) {
+        if (!value) {
+            throw new Error("Invalid value.");
+        }
+        this._subject = value;
+    }
+    constructor(name: string, age: number, private _subject: string) {
         super(name, age);
     }
     greeting() {
@@ -59,4 +73,6 @@ class Teacher extends Person {
     }
 }
 const teacher = new Teacher("Quill", 38, "Math");
+teacher.subject = "Music";
+console.log(teacher.subject);
 teacher.greeting();
