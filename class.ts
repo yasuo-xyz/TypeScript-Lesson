@@ -4,6 +4,11 @@
 // クラスはオブジェクトの設計図（再確認）
 // クラスを定義すると、同時にインスタンスを表す今回の場合だとPerson型が生成される
 class Person {
+    static species = "ホモ・サピエンス";
+    static isAdult(age: number) {
+        if (age > 17) return true;
+        return false;
+    }
     // nameフィールド、nameプロパティと言われる、nameの部分はどんな名前でも良い
     // デフォルトではパブリックになる（どこでも使える）
     // name: string;
@@ -72,7 +77,9 @@ class Teacher extends Person {
         console.log(`Hello! My name is ${this.name}. I am ${this.age} years old.`);
     }
 }
-const teacher = new Teacher("Quill", 38, "Math");
-teacher.subject = "Music";
-console.log(teacher.subject);
-teacher.greeting();
+// const teacher = new Teacher("Quill", 38, "Math");
+// teacher.subject = "Music";
+// console.log(teacher.subject);
+// teacher.greeting();
+console.log(Person.species);
+console.log(Person.isAdult(38));
