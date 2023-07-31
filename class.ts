@@ -3,7 +3,7 @@
 // 糖衣構文？というらしい
 // クラスはオブジェクトの設計図（再確認）
 // クラスを定義すると、同時にインスタンスを表す今回の場合だとPerson型が生成される
-class Person {
+abstract class Person {
     static species = "ホモ・サピエンス";
     static isAdult(age: number) {
         if (age > 17) return true;
@@ -35,6 +35,7 @@ class Person {
     greeting(this: Person) {
         console.log(`Hello! My name is ${this.name}. I am ${this.age} years old.`);
     }
+    abstract explainJob(): void;
 }
 // newキーワードを使ってPersonクラスのオブジェクトを作成する事が出来る
 // const quill = new Person("Quill", 38);
@@ -56,6 +57,9 @@ class Person {
 // 記述の内容としては、上記のPersonの内容をTeacherにコピーするとゆう意味
 // もし、何か追加したい場合は、コンストラクタ関数とsuper関数を使わないといけない
 class Teacher extends Person {
+    explainJob() {
+        console.log(`I am a teacher and I teach ${this.subject}.`);
+    }
     // ゲッターは、get関数使う
     get subject() {
         if (!this._subject) {
@@ -81,5 +85,7 @@ class Teacher extends Person {
 // teacher.subject = "Music";
 // console.log(teacher.subject);
 // teacher.greeting();
-console.log(Person.species);
-console.log(Person.isAdult(38));
+// console.log(Person.species);
+// console.log(Person.isAdult(38));
+const teacher = new Teacher("Quill", 38, "Math");
+teacher.greeting();
