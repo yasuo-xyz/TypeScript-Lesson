@@ -57,6 +57,7 @@ abstract class Person {
 // 記述の内容としては、上記のPersonの内容をTeacherにコピーするとゆう意味
 // もし、何か追加したい場合は、コンストラクタ関数とsuper関数を使わないといけない
 class Teacher extends Person {
+    private static instance: Teacher;
     explainJob() {
         console.log(`I am a teacher and I teach ${this.subject}.`);
     }
@@ -74,11 +75,16 @@ class Teacher extends Person {
         }
         this._subject = value;
     }
-    constructor(name: string, age: number, private _subject: string) {
+    private constructor(name: string, age: number, private _subject: string) {
         super(name, age);
     }
     greeting() {
         console.log(`Hello! My name is ${this.name}. I am ${this.age} years old.`);
+    }
+    static getInstance() {
+        if (Teacher.instance) return Teacher.instance;
+        Teacher.instance = new Teacher("Quill", 38, "Math");
+        return Teacher.instance;
     }
 }
 // const teacher = new Teacher("Quill", 38, "Math");
@@ -87,5 +93,5 @@ class Teacher extends Person {
 // teacher.greeting();
 // console.log(Person.species);
 // console.log(Person.isAdult(38));
-const teacher = new Teacher("Quill", 38, "Math");
+const teacher = Teacher.getInstance();
 teacher.greeting();
