@@ -95,4 +95,4 @@ class Teacher extends Person {
 // console.log(Person.isAdult(38));
 const teacher = Teacher.getInstance();
 teacher.greeting();
-// 休息6 
+// 休息7
